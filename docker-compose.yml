@@ -1,0 +1,23 @@
+# v2 syntax
+version: '2'
+
+# Named volumes
+volumes:
+  # MySQL Data
+  gnv-mysql-data:
+    driver: local
+
+services:
+  # MySQL (5.7)
+  mysql:
+    image: ambientum/mysql:5.7
+    container_name: gnv-mysql
+    volumes:
+      - gnv-mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=gnv
+      - MYSQL_DATABASE=gnv
+      - MYSQL_USER=gnv
+      - MYSQL_PASSWORD=gnv
