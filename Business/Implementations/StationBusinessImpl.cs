@@ -2,16 +2,16 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using gnv_back.Models;
-using gnv_back.Models.context;
 using gnv_back.Repository;
+using gnv_back.Repository.Generic;
 
-namespace gnv_back.Business.implementations
+namespace gnv_back.Business.Implementations
 {
     public class StationBusinessImpl : IStationBusiness
     {
-        private IStationRepository _repository;
+        private IRepository<Station> _repository;
 
-        public StationBusinessImpl(IStationRepository repository) {
+        public StationBusinessImpl(IRepository<Station> repository) {
             _repository = repository;
         }
 

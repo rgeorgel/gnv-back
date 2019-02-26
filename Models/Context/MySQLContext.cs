@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace gnv_back.Models.context
+namespace gnv_back.Models.Context
 {
     public class MySQLContext : DbContext
     {

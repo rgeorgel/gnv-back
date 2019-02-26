@@ -2,9 +2,9 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using gnv_back.Models;
-using gnv_back.Models.context;
+using gnv_back.Models.Context;
 
-namespace gnv_back.Repository.implementations
+namespace gnv_back.Repository.Implementations
 {
     public class StationRepositoryImpl : IStationRepository
     {

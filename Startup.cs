@@ -12,10 +12,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using gnv_back.Business;
-using gnv_back.Business.implementations;
-using gnv_back.Models.context;
+using gnv_back.Business.Implementations;
+using gnv_back.Models.Context;
 using gnv_back.Repository;
-using gnv_back.Repository.implementations;
+using gnv_back.Repository.Implementations;
+using gnv_back.Repository.Generic;
 
 namespace gnv_back
 {
@@ -72,6 +73,7 @@ namespace gnv_back
 
             services.AddScoped<IStationBusiness, StationBusinessImpl>();
             services.AddScoped<IStationRepository, StationRepositoryImpl>();
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             // services.AddApiVersioning();
         }
