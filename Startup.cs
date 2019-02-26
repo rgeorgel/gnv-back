@@ -15,7 +15,6 @@ using gnv_back.Business;
 using gnv_back.Business.Implementations;
 using gnv_back.Models.Context;
 using gnv_back.Repository;
-using gnv_back.Repository.Implementations;
 using gnv_back.Repository.Generic;
 
 namespace gnv_back
@@ -72,7 +71,7 @@ namespace gnv_back
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<IStationBusiness, StationBusinessImpl>();
-            services.AddScoped<IStationRepository, StationRepositoryImpl>();
+
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             // services.AddApiVersioning();
