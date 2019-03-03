@@ -62,11 +62,10 @@ namespace gnv_back
                 }
             }
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowOrigin",
-                    builder => builder.AllowAnyOrigin());
-            });
+            services.AddCors(options => options.AddPolicy("AllowAll",
+                                                            p => p.AllowAnyOrigin()
+                                                                .AllowAnyMethod()
+                                                                .AllowAnyHeader()));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -90,7 +89,7 @@ namespace gnv_back
                 app.UseHsts();
             }
 
-            app.UseCors("AllowOrigin");
+            app.UseCors("AllowAll");
 
             app.UseHttpsRedirection();
             app.UseMvc();
