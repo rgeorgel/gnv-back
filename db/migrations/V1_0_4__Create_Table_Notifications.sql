@@ -1,0 +1,8 @@
+CREATE TABLE `Notifications` (
+	`Id` int(10) UNSIGNED NULL DEFAULT NULL,
+	`StationId` int(10) NULL DEFAULT NULL,
+	`Type` int(10) NULL DEFAULT NULL,
+	`Date` DateTime NULL DEFAULT NULL
+)
+ENGINE=InnoDB
+;

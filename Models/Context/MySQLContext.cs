@@ -13,5 +13,6 @@ namespace gnv_back.Models.Context
         }
 
         public DbSet<Station> Stations { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
     }
 }

@@ -70,6 +70,7 @@ namespace gnv_back
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<IStationBusiness, StationBusinessImpl>();
+            services.AddScoped<INotificationBusiness, NotificationBusinessImpl>();
 
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
