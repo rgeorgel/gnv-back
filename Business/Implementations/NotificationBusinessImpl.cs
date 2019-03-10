@@ -17,6 +17,7 @@ namespace gnv_back.Business.Implementations
 
         public Notification Create(Notification notification)
         {
+            notification.Date = DateTime.Now;
             return _repository.Create(notification);
         }
 
