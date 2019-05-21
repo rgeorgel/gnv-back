@@ -11,11 +11,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore;
+using Swashbuckle.AspNetCore.Swagger;
 using gnv_back.Business;
 using gnv_back.Business.Implementations;
 using gnv_back.Models.Context;
 using gnv_back.Repository;
 using gnv_back.Repository.Generic;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace gnv_back
 {
@@ -69,6 +72,15 @@ namespace gnv_back
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1",
+                    new Microsoft.OpenApi.Models.OpenApiInfo
+                    {
+                        Title = "API - GNV no APP",
+                        Version = "v1"
+                    });
+            });
+
             services.AddScoped<IStationBusiness, StationBusinessImpl>();
             services.AddScoped<INotificationBusiness, NotificationBusinessImpl>();
 
@@ -91,6 +103,15 @@ namespace gnv_back
             }
 
             app.UseCors("AllowAll");
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API - GNV no APP");
+            });
+
+            var option = new RewriteOptions();
+            option.AddRedirect("^$", "swagger");
+            app.UseRewriter(option);
 
             app.UseHttpsRedirection();
             app.UseMvc();
