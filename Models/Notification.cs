@@ -4,7 +4,7 @@ using gnv_back.Models.Base;
 
 namespace gnv_back.Models
 {
-    [Table("Notifications")]
+    [Table("notifications")]
     public class Notification : BaseEntity
     {
         public long StationId { get; set;}

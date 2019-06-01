@@ -42,13 +42,15 @@ namespace gnv_back
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var configurationString = _configuration["MySqlConnection:MySqlConnectionString"];
-            services.AddDbContext<MySQLContext>(options => options.UseMySql(configurationString));
+            var configurationString = _configuration["PostgresConnection:PostgresConnectionString"];
+
+            services.AddDbContext<PostgresContext>(options => options.UseNpgsql(configurationString));
 
             if (_environment.IsDevelopment()) {
                 try
                 {
-                    var evolveConnection = new MySql.Data.MySqlClient.MySqlConnection(configurationString);
+                    // var evolveConnection = new MySql.Data.MySqlClient.MySqlConnection(configurationString);
+                    var evolveConnection = new Npgsql.NpgsqlConnection(configurationString);
 
                     var evolve = new Evolve.Evolve("evolve.json", evolveConnection, msg => _logger.LogInformation(msg))
                     {

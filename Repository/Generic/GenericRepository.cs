@@ -9,9 +9,9 @@ namespace gnv_back.Repository.Generic
 {
     public class GenericRepository<T> : IRepository<T> where T : BaseEntity
     {
-        private MySQLContext _context;
+        private PostgresContext _context;
         private DbSet<T> dataset;
-        public GenericRepository(MySQLContext context) {
+        public GenericRepository(PostgresContext context) {
             _context = context;
             dataset = _context.Set<T>();
         }

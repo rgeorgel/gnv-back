@@ -5,7 +5,7 @@ namespace gnv_back.Models.Base
 {
     public class BaseEntity
     {
-        [Column("ID")]
+        [Column("id")]
         public long? Id { get; set; }        
     }
 }

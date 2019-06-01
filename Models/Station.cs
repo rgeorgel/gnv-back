@@ -3,24 +3,24 @@ using gnv_back.Models.Base;
 
 namespace gnv_back.Models
 {
-    [Table("Stations")]
+    [Table("stations")]
     public class Station : BaseEntity
     {
-        [Column("Name")]
+        [Column("name")]
         public string Name { get; set;}
-        [Column("Street")]
+        [Column("street")]
         public string Street { get; set;}
-        [Column("Number")]
+        [Column("number")]
         public string Number { get; set;}
-        [Column("Neighborhood")]
+        [Column("neighborhood")]
         public string Neighborhood { get; set;}
-        [Column("City")]
+        [Column("city")]
         public string City { get; set;}
-        [Column("State")]
+        [Column("state")]
         public string State { get; set;}
-        [Column("Lat")]
+        [Column("lat")]
         public string Lat { get; set;}
-        [Column("Lng")]
+        [Column("lng")]
         public string Lng { get; set;}
     }
 }
