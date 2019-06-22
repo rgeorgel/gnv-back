@@ -26,6 +26,14 @@ namespace gnv_back.Controllers
             return Ok(stations);
         }
 
+        // GET api/values
+        [HttpGet("find-by-state")]
+        public IActionResult GetByState([FromQuery] string state)
+        {
+            var stations = _stationBusiness.FindByState(state);
+            return Ok(stations);
+        }
+
         // POST api/values
         [HttpPost]
         public IActionResult Post([FromBody] Station station)

@@ -9,9 +9,9 @@ namespace gnv_back.Business.Implementations
 {
     public class StationBusinessImpl : IStationBusiness
     {
-        private IRepository<Station> _repository;
+        private IStationRepository _repository;
 
-        public StationBusinessImpl(IRepository<Station> repository) {
+        public StationBusinessImpl(IStationRepository repository) {
             _repository = repository;
         }
 
@@ -33,6 +33,11 @@ namespace gnv_back.Business.Implementations
         public Station FindById(long id)
         {
             return _repository.FindById(id);
+        }
+
+        public List<Station> FindByState(string state)
+        {
+            return _repository.FindByState(state);
         }
 
         public Station Update(Station station)

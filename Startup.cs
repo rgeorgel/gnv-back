@@ -19,6 +19,7 @@ using gnv_back.Models.Context;
 using gnv_back.Repository;
 using gnv_back.Repository.Generic;
 using Microsoft.AspNetCore.Rewrite;
+using gnv_back.Repository.Implementations;
 
 namespace gnv_back
 {
@@ -87,6 +88,7 @@ namespace gnv_back
             services.AddScoped<INotificationBusiness, NotificationBusinessImpl>();
 
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IStationRepository), typeof(StationRepository));
 
             // services.AddApiVersioning();
         }

@@ -7,6 +7,7 @@ namespace gnv_back.Business
     {
         Station Create(Station station);
         Station FindById(long id);
+        List<Station> FindByState(string state);
         List<Station> FindAll();
         Station Update(Station station);
         void Delete(long id);
