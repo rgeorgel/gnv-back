@@ -1,6 +1,6 @@
 {
     "Evolve.Driver": "Npgsql",
-    "Evolve.ConnectionString": "Server=ec2-50-19-114-27.compute-1.amazonaws.com;Port=5432;DataBase=dbb2m3vdognm0u;User Id=ftjmtihsuuulxf;Pwd=52fede1aa1fd526361a46a43bdaa08913a5376596f3265975c2369887779c8c5;Pooling=true;Use SSL Stream=True;SSL Mode=Require;TrustServerCertificate=True;",
+    "Evolve.ConnectionString": "Server=68.183.30.8;Port=5432;DataBase=pgdb;User Id=gnv-no-app;Pwd=gnv-no-app;Pooling=true;Use SSL Stream=True;",
     "Evolve.Locations": "db",
     "Evolve.Command": "migrate",
     "Evolve.Placeholder.table4": "table_4"

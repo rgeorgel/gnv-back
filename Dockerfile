@@ -19,4 +19,6 @@ WORKDIR /app
 COPY --from=build-environment /app/deploy-api .
 
 #Heroku command
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet gnv-back.dll
+#CMD ASPNETCORE_URLS=http://*:$PORT dotnet gnv-back.dll
+
+ENTRYPOINT ["dotnet", "gnv-back.dll"]

@@ -38,3 +38,10 @@ services:
       - "5432:5432"
     volumes:
       - gnv-postgres-data:/var/lib/postgresql/data
+  gnv-no-app:
+    image: gnv-no-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5001:5001
